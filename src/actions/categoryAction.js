@@ -4,7 +4,7 @@ import { CATEGORY_CREATE_FAIL, CATEGORY_CREATE_REQUEST, CATEGORY_CREATE_SUCCESS,
 export const listCategory = () => async (dispatch) => {
     try {
       dispatch({ type: CATEGORY_LIST_REQUEST });
-      const { data } = await axios.get("https://node-backend-ecom.onrender.com/category/get-category");
+      const { data } = await axios.get("https://node-backend-ecom.onrender.com/api/category/get-category");
       dispatch({
         type: CATEGORY_LIST_SUCCESS,
         payload: data,
@@ -25,7 +25,7 @@ export const listCategory = () => async (dispatch) => {
       dispatch({
         type: CATEGORY_CREATE_REQUEST,
       });
-      // const { data } = await axios.post("http://localhost:8080/api/category/create-category");
+      // const { data } = await axios.post("https://node-backend-ecom.onrender.com/api/category/create-category");
       const {userLogin: { userInfo },} = getState();
       const config = {
         headers: {
