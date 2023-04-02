@@ -4,7 +4,7 @@ import { CATEGORY_CREATE_FAIL, CATEGORY_CREATE_REQUEST, CATEGORY_CREATE_SUCCESS,
 export const listCategory = () => async (dispatch) => {
     try {
       dispatch({ type: CATEGORY_LIST_REQUEST });
-      const { data } = await axios.get("http://localhost:8080/api/category/get-category");
+      const { data } = await axios.get("https://node-backend-ecom.onrender.com/category/get-category");
       dispatch({
         type: CATEGORY_LIST_SUCCESS,
         payload: data,
